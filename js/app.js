@@ -45,6 +45,7 @@ shuffledCards.forEach(card => deck.appendChild(card));
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
+ 
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
  *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
@@ -58,7 +59,7 @@ cards.forEach(card => {
 	  const card = event.currentTarget;
 
 	  openCard(card);
-      addOpenCard(card);
+    addOpenCard(card);
 	});
 });
 
@@ -74,6 +75,21 @@ function openCard(card) {
 function addOpenCard(card) {
 	openCards.push(card);
 }
+
+//  - if the list already has another card, check to see if the two cards match
+function isMatching() {
+  if (openCards.length > 1) {
+    return openCards[0].innerHTML === openCards[1].innerHTML;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
