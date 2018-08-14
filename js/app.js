@@ -2,9 +2,9 @@
  * Create a list that holds all of your cards
  */
 
- const cards = document.querySelectorAll('.card');
- const deck = document.querySelector('.deck');
-
+const cards = document.querySelectorAll('.card');
+const deck = document.querySelector('.deck');
+const openCards = [];
 
 /*
  * Display the cards on the page
@@ -54,7 +54,12 @@ shuffledCards.forEach(card => deck.appendChild(card));
 // set up the event listener for a card. If a card is clicked:
 
 cards.forEach(card => {
-	card.addEventListener('click', event => openCard(event.currentTarget))
+	card.addEventListener('click', event => {
+	  const card = event.currentTarget;
+
+	  openCard(card);
+      addOpenCard(card);
+	});
 });
 
 // - display the card's symbol (put this functionality in another function that you call from this one)
@@ -64,7 +69,11 @@ function openCard(card) {
   card.classList.add('show');
 }
 
+//  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
 
+function addOpenCard(card) {
+	openCards.push(card);
+}
 
 
 
