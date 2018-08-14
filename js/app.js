@@ -53,10 +53,18 @@ shuffledCards.forEach(card => deck.appendChild(card));
 
 // set up the event listener for a card. If a card is clicked:
 
-function logCard(card) {
-	console.log(card);
+cards.forEach(card => {
+	card.addEventListener('click', event => openCard(event.currentTarget))
+});
+
+// - display the card's symbol (put this functionality in another function that you call from this one)
+
+function openCard(card) {
+  card.classList.add('open');
+  card.classList.add('show');
 }
 
-cards.forEach(card => {
-	card.addEventListener('click', event => logCard(event.currentTarget))
-})
+
+
+
+
