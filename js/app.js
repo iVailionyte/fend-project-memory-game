@@ -60,6 +60,7 @@ function startGame() {
       lockCards();
       unlockCards();
       moveCounter();
+      displayMessage();
     });
   });
 }
@@ -160,6 +161,12 @@ function moveCounter() {
 }
 
 // + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+function displayMessage() {
+  const notMatchingCards = deck.querySelectorAll('.card:not(.match)');
+  if (notMatchingCards.length === 0) {
+    alert('Finally!');
+  }
+}
 
 
 function startTimer() {
