@@ -47,7 +47,7 @@ const shuffledCards = shuffle([...cards]);
  // - loop through each card and create its HTML
  // - add each card's HTML to the page
 
-shuffledCards.forEach(card => deck.appendChild(card));
+//shuffledCards.forEach(card => deck.appendChild(card));
 
 function startGame() {
   startTimer();
@@ -180,8 +180,10 @@ function moveCounter() {
 function displayMessage() {
   const notMatchingCards = deck.querySelectorAll('.card:not(.match)');
   if (notMatchingCards.length === 0) {
-    alert('Finally! You win in ' + moves + ' moves. Your time is ' + seconds + ' seconds.');
-    restartGame();
+    if (confirm('Finally! You win in ' + moves + ' moves. Your time is ' + seconds + ' seconds.')) {
+      restartGame();
+    }
+    
   }
 }
 

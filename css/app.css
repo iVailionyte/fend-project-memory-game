@@ -107,3 +107,14 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+@media screen and (max-width: 570px) {
+  .deck {
+    
+  }
+
+}
+
+@media screen and (min-width: 571px) and (max-width: 949px) {
+ 
+}
