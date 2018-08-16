@@ -11,7 +11,9 @@ let seconds = 0;
 let timer = document.querySelector('.timer');
 let interval;
 
-const starts = document.querySelectorAll('.fa-star');
+const stars = document.querySelector('.stars');
+
+
 
 /*
  * Display the cards on the page
@@ -142,17 +144,22 @@ function unlockCards() {
 
 // + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 
+
+
 function moveCounter() {
   moves++;
   counter.innerHTML = moves;
 
-  if (moves > 10) {
-    pop();
+  if (moves % 15 === 0) {
+    const remaningStars = [...stars.children];
+    remaningStars.pop();
+
+    stars.innerHTML = '';
+    remaningStars.forEach(star => stars.appendChild(star));
   }
 }
 
 // + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
-
 
 
 function startTimer() {
