@@ -110,11 +110,19 @@ h1 {
 
 @media screen and (max-width: 570px) {
   .deck {
+    width: 100%;
+    min-height: 540px;
     
   }
-
+  .deck .card {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 @media screen and (min-width: 571px) and (max-width: 949px) {
- 
+  .deck .card {
+    width: 120px;
+    height: 120px;
+  }
 }
