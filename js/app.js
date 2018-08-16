@@ -49,14 +49,6 @@ const shuffledCards = shuffle([...cards]);
 
 shuffledCards.forEach(card => deck.appendChild(card));
 
-function restartGame() {
-  seconds = 0;
-  timer.innerHTML = seconds;
-  moves = 0;
-  counter.innerHTML = moves;
-  clearTimeout(interval);
-}
-
 function startGame() {
   startTimer();
   // set up the event listener for a card. If a card is clicked:
@@ -72,6 +64,21 @@ function startGame() {
       moveCounter();
       displayMessage();
     });
+  });
+}
+
+function restartGame() {
+  seconds = 0;
+  timer.innerHTML = seconds;
+  moves = 0;
+  counter.innerHTML = moves;
+
+  const starsList = '<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>';
+  stars.innerHTML = starsList;
+
+  clearTimeout(interval);
+  cards.forEach((card) => {
+    card.classList.remove('match', 'open', 'show');
   });
 }
 
@@ -173,7 +180,8 @@ function moveCounter() {
 function displayMessage() {
   const notMatchingCards = deck.querySelectorAll('.card:not(.match)');
   if (notMatchingCards.length === 0) {
-    alert('Finally!');
+    alert('Finally! You win in ' + moves + ' moves. Your time is ' + seconds + ' seconds.');
+    restartGame();
   }
 }
 
