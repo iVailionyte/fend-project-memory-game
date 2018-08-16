@@ -12,6 +12,8 @@ let timer = document.querySelector('.timer');
 let interval;
 
 const stars = document.querySelector('.stars');
+const restart = document.querySelector('.restart');
+let isGameRunning = false;
 
 
 
@@ -46,6 +48,14 @@ const shuffledCards = shuffle([...cards]);
  // - add each card's HTML to the page
 
 shuffledCards.forEach(card => deck.appendChild(card));
+
+function restartGame() {
+  seconds = 0;
+  timer.innerHTML = seconds;
+  moves = 0;
+  counter.innerHTML = moves;
+  clearTimeout(interval);
+}
 
 function startGame() {
   startTimer();
@@ -130,7 +140,6 @@ function closeCard(card) {
 }
 
 function unlockCards() {
-  console.log(openCards);
   if (openCards.length > 1) {
     if (!isMatching()) {
       setTimeout(() => {
@@ -176,8 +185,9 @@ function startTimer() {
   }, 1000);
 }
 
+restart.addEventListener('click', () => {
+  restartGame();
+});
+
+
 startGame();
-
-
-
-
