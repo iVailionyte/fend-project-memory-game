@@ -6,7 +6,12 @@ const cards = document.querySelectorAll('.card');
 const deck = document.querySelector('.deck');
 let openCards = [];
 let moves = 0;
-let counter = document.querySelector(".moves");
+let counter = document.querySelector('.moves');
+let seconds = 0;
+let timer = document.querySelector('.timer');
+let interval;
+
+const starts = document.querySelectorAll('.fa-star');
 
 /*
  * Display the cards on the page
@@ -40,7 +45,22 @@ const shuffledCards = shuffle([...cards]);
 
 shuffledCards.forEach(card => deck.appendChild(card));
 
+function startGame() {
+  startTimer();
+  // set up the event listener for a card. If a card is clicked:
 
+  cards.forEach(card => {
+    card.addEventListener('click', event => {
+      const card = event.currentTarget;
+
+      openCard(card);
+      addOpenCard(card);
+      lockCards();
+      unlockCards();
+      moveCounter();
+    });
+  });
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -54,19 +74,7 @@ shuffledCards.forEach(card => deck.appendChild(card));
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-// set up the event listener for a card. If a card is clicked:
 
-cards.forEach(card => {
-	card.addEventListener('click', event => {
-	  const card = event.currentTarget;
-
-	  openCard(card);
-    addOpenCard(card);
-    lockCards();
-    unlockCards();
-    moveCounter();
-	});
-});
 
 // - display the card's symbol (put this functionality in another function that you call from this one)
 
@@ -137,6 +145,25 @@ function unlockCards() {
 function moveCounter() {
   moves++;
   counter.innerHTML = moves;
+
+  if (moves > 10) {
+    pop();
+  }
 }
+
+// + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+
+
+
+function startTimer() {
+  interval = setInterval(function() {
+    seconds++;
+    timer.innerHTML = seconds;
+  }, 1000);
+}
+
+startGame();
+
+
 
 
