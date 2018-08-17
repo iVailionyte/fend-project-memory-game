@@ -4,10 +4,10 @@ A card matching game that relies on Vanilla JS. Start by clicking on a card and 
 
 ## Table of Contents
 
-* [Instructions how to play](#instructions)
-* [Contributing](#contributing)
+* [Instructions](#instructions)
+* [Features](#features)
 
-## Instructions how to play
+## Instructions
 
 * Load this link in your browser https://ivailionyte.github.io/fend-project-memory-game/
 * Click on a card
