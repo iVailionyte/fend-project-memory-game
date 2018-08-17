@@ -50,7 +50,7 @@ const shuffledCards = shuffle([...cards]);
  // - loop through each card and create its HTML
  // - add each card's HTML to the page
 
-//shuffledCards.forEach(card => deck.appendChild(card));
+shuffledCards.forEach(card => deck.appendChild(card));
 
 function startGame() {
   startTimer();
