@@ -15,7 +15,10 @@ const stars = document.querySelector('.stars');
 const restart = document.querySelector('.restart');
 let isGameRunning = false;
 
-
+const modal = document.getElementById('myModal');
+const dialogClose = document.querySelector('.dialogClose');
+const dialogMoves = document.querySelector('.dialogMoves');
+const dialogSeconds = document.querySelector('.dialogSeconds');
 
 /*
  * Display the cards on the page
@@ -56,6 +59,9 @@ function startGame() {
   cards.forEach(card => {
     card.addEventListener('click', event => {
       const card = event.currentTarget;
+      if (card.classList.contains('open')) {
+        return;
+      }
 
       openCard(card);
       addOpenCard(card);
@@ -69,6 +75,7 @@ function startGame() {
 
 function restartGame() {
   seconds = 0;
+  openCards = [];
   timer.innerHTML = seconds;
   moves = 0;
   counter.innerHTML = moves;
@@ -77,6 +84,7 @@ function restartGame() {
   stars.innerHTML = starsList;
 
   clearTimeout(interval);
+  startTimer();
   cards.forEach((card) => {
     card.classList.remove('match', 'open', 'show');
   });
@@ -166,6 +174,7 @@ function unlockCards() {
 function moveCounter() {
   moves++;
   counter.innerHTML = moves;
+  dialogMoves.innerHTML = moves;
 
   if (moves % 15 === 0) {
     const remaningStars = [...stars.children];
@@ -180,10 +189,19 @@ function moveCounter() {
 function displayMessage() {
   const notMatchingCards = deck.querySelectorAll('.card:not(.match)');
   if (notMatchingCards.length === 0) {
-    if (confirm('Finally! You win in ' + moves + ' moves. Your time is ' + seconds + ' seconds.')) {
-      restartGame();
-    }
-    
+    modal.style.display = "block";
+    clearTimeout(interval);
+  }
+}
+
+dialogClose.onclick = function() {
+    modal.style.display = "none";
+    restartGame();
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
@@ -192,6 +210,7 @@ function startTimer() {
   interval = setInterval(function() {
     seconds++;
     timer.innerHTML = seconds;
+    dialogSeconds.innerHTML = seconds;
   }, 1000);
 }
 
