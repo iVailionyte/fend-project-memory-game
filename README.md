@@ -1,20 +1,22 @@
 # Memory Game Project
 
+A card matching game that relies on Vanilla JS. Start by clicking on a card and try to match it with another card.
+
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Instructions how to play](#instructions)
 * [Contributing](#contributing)
 
-## Instructions
+## Instructions how to play
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+* Load this link in your browser https://ivailionyte.github.io/fend-project-memory-game/
+* Click on a card
+* Keep searching for the same cards and working your memory to remember each clicked card.
+* Match cards with less moves and in faster time
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Features
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+* Counting your moves
+* Live time tracking
+* Rating system based on moves
+* Restart button
