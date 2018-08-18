@@ -1,11 +1,12 @@
 # Memory Game Project
 
-A card matching game that relies on Vanilla JS. Start by clicking on a card and try to match it with another card.
+A card matching game that relies on Vanilla JS without any external libraries. Start by clicking on a card and try to match it with another card.
 
 ## Table of Contents
 
 * [Instructions](#instructions)
 * [Features](#features)
+* [Inside the game](#inside)
 
 ## Instructions
 
@@ -20,3 +21,7 @@ A card matching game that relies on Vanilla JS. Start by clicking on a card and 
 * Live time tracking
 * Rating system based on moves
 * Restart button
+
+## Inside the game
+
+![Inside the game](./img/screenshot)
