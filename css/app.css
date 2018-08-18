@@ -149,6 +149,14 @@ h1 {
     cursor: pointer;
 }
 
+.dialogStars {
+    list-style: none;
+}
+
+.dialogStars li {
+    display: inline-block;
+}
+
 @media screen and (max-width: 570px) {
   .deck {
     width: 100%;

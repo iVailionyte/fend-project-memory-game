@@ -19,6 +19,7 @@ const modal = document.getElementById('myModal');
 const dialogClose = document.querySelector('.dialogClose');
 const dialogMoves = document.querySelector('.dialogMoves');
 const dialogSeconds = document.querySelector('.dialogSeconds');
+const dialogStars = document.querySelector('.dialogStars');
 
 /*
  * Display the cards on the page
@@ -191,6 +192,9 @@ function displayMessage() {
   if (notMatchingCards.length === 0) {
     modal.style.display = "block";
     clearTimeout(interval);
+
+    const starRating = document.querySelector(".starsModal").innerHTML;
+    dialogStars.innerHTML = starRating;
   }
 }
 
