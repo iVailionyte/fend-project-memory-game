@@ -24,4 +24,4 @@ A card matching game that relies on Vanilla JS without any external libraries. S
 
 ## Inside the game
 
-![Inside the game](img/screenshot.png)
+![Inside the game](img/Screenshot.png)
