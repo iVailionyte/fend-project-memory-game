@@ -6,8 +6,8 @@ A card matching game that relies on Vanilla JS without any external libraries. S
 
 * [Instructions](#instructions)
 * [Features](#features)
-* [Inside the game](#inside)
 * [Dependencies](#dependencies)
+* [Inside the game](#inside)
 
 ## Instructions
 
