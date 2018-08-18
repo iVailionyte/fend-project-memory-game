@@ -7,6 +7,7 @@ A card matching game that relies on Vanilla JS without any external libraries. S
 * [Instructions](#instructions)
 * [Features](#features)
 * [Inside the game](#inside)
+* [Dependencies](#dependencies)
 
 ## Instructions
 
@@ -21,6 +22,11 @@ A card matching game that relies on Vanilla JS without any external libraries. S
 * Live time tracking
 * Rating system based on moves
 * Restart button
+
+## Dependencies
+
+* Game relies on Vanilla JS.
+* Game was created without any external libraries.
 
 ## Inside the game
 
